@@ -1,7 +1,13 @@
-from php:8.1-fpm
-workdir /app
-run apt-get update
-run apt-get upgrade
-#copy entrypoint.sh /entrypoint-component.sh
-expose 9000
-cmd ["/entrypoint-component.sh"]
+FROM php:8.1-fpm
+
+WORKDIR /app
+
+RUN apt-get update 
+RUN apt-get upgrade -y
+
+#COPY entrypoint.sh /entrypoint-component.sh
+
+EXPOSE 9000
+
+CMD ["php-fpm", "-O", "-F"]
+
