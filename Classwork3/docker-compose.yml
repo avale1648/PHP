@@ -3,7 +3,7 @@ version: '3.0'
 
 services:
   webserver:
-    container_name: firstProject-web
+    container_name: thirdProject-web
     build:
       context: .
       dockerfile: Dockerfile.web
@@ -15,7 +15,7 @@ services:
 
 
   app:
-    container_name: firstProject-app
+    container_name: thirdProject-app
     build:
       context: .
       dockerfile: Dockerfile.app
